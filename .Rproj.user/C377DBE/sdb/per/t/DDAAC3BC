@@ -1,0 +1,17 @@
+{
+    "contents" : "## function best(state, outcome) will read outcome data\n## from each state and determine lowest 30-day death rate\n\n# inputs best(\"TX\", \"heart attack\") /returns CYPRESS...\n# best(\"MD\", \"heart attack) /returns JOHNS...\n#best(\"TX\", \"heart failure\") /returns FORT...\n#best(\"MD\", \"pneumonia\")  /returns GREATER...\n#best(\"BB\", \"heart attack\") /returns error \"invalid state\"\n#best(\"NY\", \"hert attack\") /returns error \"invalid outcome\"\n\nstr(data)\nbest <- function(state, outcome){\n  state <- data(do.call(pmin, lapply(1:ncol(data), function(state)data[state, ])))\n    if state!(data, %in% [, 7] ) <- \"error : invalid state\"\n}",
+    "created" : 1422470058089.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4000176682",
+    "id" : "DDAAC3BC",
+    "lastKnownWriteTime" : 1422484986,
+    "path" : "~/R/rprog-data-ProgAssignment3-data/best.R",
+    "project_path" : "best.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
