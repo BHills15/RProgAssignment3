@@ -8,13 +8,18 @@
 #best("BB", "heart attack") /returns error "invalid state"
 #best("NY", "hert attack") /returns error "invalid outcome"
 
-library(dplyr)
-setwd("C:/Users/B/Toolbox/RProgAssignment3")
-data <- read.csv("outcome-of-care-measures.csv")
+#filter(data.df, State == state)
+#select(data.df, Hospital.Name,
+  #      Hospital.30.Day.Death..Mortality..Rates.from.Heart.Attack,
+  #      Hospital.30.Day.Death..Mortality..Rates.from.Heart.Failure,
+  #      Hospital.30.Day.Death..Mortality..Rates.from.Pneumonia)
 
-best <- function(state, outcome){
-  state <- filter(data$State = state)
-   # if state = NULL stop error : invalid state
-  mort.columns <- select(data, ncol = 2, ncol = 11, ncol = 17, ncol = 23, contains = outcome)
-    min.outcome <- min_rank(mort.columns)
-  }
+
+library(dplyr)
+setwd("C:/Users/HillsLaptop/Documents/R/rprog-data-ProgAssignment3-data")
+outcome <- read.csv("outcome-of-care-measures.csv", 
+                    colClasses = "character",
+                    na.strings = "Not Available")
+outcome.state <- as.numeric(outcome[, 11:47])
+outcome <- arrange(outcome.state, rate)
+
